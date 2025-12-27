@@ -1,10 +1,9 @@
 <template>
   <div 
     class="flex flex-col items-center justify-center min-h-[50vh] w-full px-6 text-center relative"
-    v-motion-fade
   >
-    <div :class="['w-32 h-32 mb-10 rounded-[45px] flex items-center justify-center text-6xl shadow-2xl transform hover:rotate-12 transition-all duration-500 hover:scale-110', 
-      themeStore.isDark ? 'bg-white/5 text-white shadow-blue-500/20' : 'bg-white text-slate-900 shadow-black/10']">
+    <div :class="['w-32 h-32 mb-10 rounded-[45px] flex items-center justify-center text-6xl shadow-xl transform transition-all duration-300 hover:scale-105', 
+      themeStore.isDark ? 'bg-white/5 text-white shadow-blue-500/10' : 'bg-white text-slate-900 shadow-black/5']">
       🌍
     </div>
     
@@ -20,8 +19,7 @@
     
     <div class="flex gap-6">
       <div v-for="(emoji, index) in ['☀️', '🌧️', '❄️', '🌩️']" :key="index" 
-        :style="{ animationDelay: `${index * 150}ms` }"
-        class="text-3xl filter grayscale hover:grayscale-0 transition-all duration-500 cursor-default transform hover:scale-150 hover:-translate-y-2 animate-pulse">
+        class="text-3xl filter grayscale hover:grayscale-0 transition-all duration-300 cursor-default transform hover:scale-125">
         {{ emoji }}
       </div>
     </div>

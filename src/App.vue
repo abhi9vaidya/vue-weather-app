@@ -1,26 +1,18 @@
 <template>
-  <div :class="['min-h-screen transition-colors duration-500 font-sans selection:bg-blue-500/30 flex flex-col', 
+  <div :class="['min-h-screen transition-colors duration-300 font-sans selection:bg-blue-500/30 flex flex-col', 
     themeStore.isDark ? 'bg-[#0b1324] text-white' : 'bg-[#f2f2f7] text-slate-900']">
     
-    <!-- Background Decorative Elements -->
-    <div v-if="themeStore.isDark" class="fixed inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-600/10 blur-[150px] rounded-full animate-pulse"></div>
-      <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-purple-600/10 blur-[150px] rounded-full animate-pulse" style="animation-delay: 2s"></div>
-      <div class="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-indigo-600/5 blur-[120px] rounded-full"></div>
-    </div>
-
     <!-- Header / Navbar (Full Width) -->
     <header 
-      :class="['sticky top-0 z-50 w-full border-b transition-all duration-500 backdrop-blur-2xl',
+      :class="['sticky top-0 z-50 w-full border-b transition-all duration-300 backdrop-blur-xl',
         themeStore.isDark 
-          ? 'bg-[#030712]/80 border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]' 
-          : 'bg-white/70 border-black/[0.02] shadow-[0_2px_15px_rgba(0,0,0,0.02)]']"
-      v-motion-fade
+          ? 'bg-[#030712]/90 border-white/5 shadow-lg' 
+          : 'bg-white/80 border-black/[0.02] shadow-sm']"
     >
       <div class="w-full px-8 py-4 flex items-center justify-between md:grid md:grid-cols-3 gap-4">
         <!-- Logo Section -->
         <div class="flex items-center gap-4 group cursor-pointer justify-self-start">
-          <div class="w-12 h-12 md:w-14 md:h-14 transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 flex items-center justify-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
             <img src="/logo.png" alt="Logo" class="w-full h-full object-contain" />
           </div>
           <div class="hidden lg:block">
@@ -85,7 +77,7 @@
           <template v-if="weatherStore.hasWeatherData && !weatherStore.loading">
             <WeatherCard class="flex-1" />
             
-            <div v-motion-slide-visible-bottom>
+            <div>
               <div class="flex items-center gap-4 mb-3">
                 <h2 :class="['text-[9px] font-black tracking-[0.4em] uppercase opacity-40', themeStore.isDark ? 'text-gray-400' : 'text-slate-500']">Weather Details</h2>
                 <div :class="['h-[1px] flex-1', themeStore.isDark ? 'bg-white/10' : 'bg-slate-200']"></div>

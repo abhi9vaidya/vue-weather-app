@@ -11,7 +11,8 @@
     "vue": "^3.4.21",
     "pinia": "^2.1.7",
     "axios": "^1.6.7",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "@vueuse/motion": "^2.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

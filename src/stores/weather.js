@@ -15,10 +15,19 @@ export const useWeatherStore = defineStore('weather', {
     feelsLike: (state) => state.weatherData?.main?.feels_like ?? null,
     humidity: (state) => state.weatherData?.main?.humidity ?? null,
     windSpeed: (state) => state.weatherData?.wind?.speed ?? null,
+    pressure: (state) => state.weatherData?.main?.pressure ?? null,
+    visibility: (state) => state.weatherData?.visibility ?? null,
+    cloudiness: (state) => state.weatherData?.clouds?.all ?? null,
+    sunrise: (state) => state.weatherData?.sys?.sunrise ?? null,
+    sunset: (state) => state.weatherData?.sys?.sunset ?? null,
     description: (state) => state.weatherData?.weather?.[0]?.description ?? '',
     weatherIcon: (state) => state.weatherData?.weather?.[0]?.icon ?? '',
+    weatherMain: (state) => state.weatherData?.weather?.[0]?.main ?? '',
     cityName: (state) => state.weatherData?.name ?? '',
-    country: (state) => state.weatherData?.sys?.country ?? ''
+    country: (state) => state.weatherData?.sys?.country ?? '',
+    latitude: (state) => state.weatherData?.coord?.lat ?? null,
+    longitude: (state) => state.weatherData?.coord?.lon ?? null,
+    windDirection: (state) => state.weatherData?.wind?.deg ?? null
   },
 
   actions: {

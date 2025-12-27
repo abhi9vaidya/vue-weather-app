@@ -1,17 +1,22 @@
 <template>
-  <div class="w-full max-w-md mx-auto">
-    <form @submit.prevent="handleSearch" class="flex gap-2">
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="Enter city name..."
-        class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-        :disabled="loading"
-      />
+  <div class="w-full max-w-2xl mx-auto">
+    <form @submit.prevent="handleSearch" class="flex gap-3">
+      <div class="flex-1 relative">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Enter city name..."
+          class="w-full px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all text-lg font-medium shadow-lg"
+          :disabled="loading"
+        />
+        <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70">
+          🔍
+        </div>
+      </div>
       <button
         type="submit"
         :disabled="loading || !searchQuery.trim()"
-        class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+        class="px-8 py-4 bg-white text-blue-600 rounded-xl hover:bg-blue-50 disabled:bg-white/50 disabled:cursor-not-allowed transition-all font-bold text-lg shadow-lg hover:scale-105 active:scale-95"
       >
         {{ loading ? 'Searching...' : 'Search' }}
       </button>

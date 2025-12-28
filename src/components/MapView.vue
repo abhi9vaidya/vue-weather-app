@@ -5,7 +5,6 @@
       themeStore.isDark 
         ? 'bg-[#0b1324]/40 border-white/5 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.5)]' 
         : 'bg-white border-black/[0.02] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)]']"
-    v-motion-fade
   >
     <div :class="['p-4 flex items-center justify-between border-b backdrop-blur-xl relative z-10', themeStore.isDark ? 'border-white/5 bg-white/[0.02]' : 'border-black/[0.02] bg-white/50']">
       <div class="flex items-center gap-3">
